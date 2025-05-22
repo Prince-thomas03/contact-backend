@@ -8,6 +8,11 @@ export class UsersController {
 
   constructor(private readonly UsersService: UsersService) {}
 
+@Get('/')
+getHealth() {
+  return { message: 'API is running' };
+}
+
   @Post('signup')
   signup(@Body() body: SignupDto) {
     return this.UsersService.signup(body);
